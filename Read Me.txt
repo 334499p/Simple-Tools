@@ -1,0 +1,78 @@
+Simple Tools
+------------
+Aero Games
+------------
+
+This package includes four tools created for the development of my game “The Wall” (aero-games.com/TheWall)
+
+More tools may be added to this package if I find the time to do it (Feel free to suggest ideas)
+
+Keep in mind these tools were created mostly for personal use so they may be buggy or not work as expected at all times.
+
+------------
+
+Asset Creator
+
+Simple Tools > Asset Creator
+
+This tool is the foundation for the other three tools and any scripts a user may create
+Each tool uses the assets created by the asset creator in unique ways
+
+Create .assets based on custom ScriptableObject classes which can store pre-defined or realtime information
+
+------------
+
+Object Placement Editor
+
+Simple Tools > Place Objects
+
+A tool for painting and erasing prefabs.
+
+Getting a Prefab set up
+
+1. Make sure you have a prefab to be placed in your scene
+2. Duplicate one of the example assets found in SimpleTools/MyAssets/Object Placement Prefabs
+3. Assign your prefab to the "Prefab" slot in the asset
+5. Assign the asset to the slot in the Place Objects window
+
+Placing the objects
+
+1. Make sure the object on which you are painting has a Collider
+2. The erase tool erases objects only created with the Place Objects window per instance
+
+
+Other
+
+1. Do not try to undo eraser or draw strokes!!! Undo/redo has not been implemented
+
+------------
+
+Object Grounder Editor
+
+Simple Tools > Ground Objects
+
+A tool for aligning objects onto a ground surface (useful for a massive array of objects like fences).
+This tool uses an asset ("derived from GroundObjectsData") to store information
+
+1. Open the Editor Window Simple Tools > Ground Objects 
+2. Select all objects in the scene view that you need to align on the ground
+3. Press "Ground _ Objects"
+
+
+Other
+
+1. This DOES have undo capabilities!
+
+------------
+
+Development Tracker
+
+Simple tools > Development Tracker
+
+A tool for keeping track of version, build, and synopsis information - An asset derived from "DevelopmentTracker"
+This tool modifies the asset directly, using a custom editor to interact with asset
+
+1. Enter the build information
+3. Iterate builds by pressing the "Iterate" button or modifying the input field
+2. Finalize builds when the information of the build is complete
+
