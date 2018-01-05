@@ -42,6 +42,7 @@ namespace SimpleTools {
 			placing = true;
 		}
 
+
 		[MenuItem( "Simple Tools/Place Objects", false, 1000 )]
 		public static void openCustomTools(){
 			var window = EditorWindow.GetWindow<SimpleTools_ObjectPlacer>();
@@ -67,7 +68,9 @@ namespace SimpleTools {
 
 			string[] toolSelection = { "Draw", "Erase" };
 			toolSelected = GUILayout.Toolbar(toolSelected,toolSelection);
-
+			if (objectUsing) {
+				EditorUtility.SetDirty (objectUsing);
+			}
 			if (toolSelected == 0) {
 				GUILayout.Space (4);
 				objectUsing = (ObjectPlacementPrefab)EditorGUILayout.ObjectField (objectUsing, typeof(ObjectPlacementPrefab), false);

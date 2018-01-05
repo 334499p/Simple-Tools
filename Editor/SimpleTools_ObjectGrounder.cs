@@ -38,6 +38,9 @@ namespace SimpleTools {
 			rotateTowardsNormal = groundObjectsData.rotateTowardsNormal;
 		}
 		void OnGUI(){
+			if (groundObjectsData != null) {
+				EditorUtility.SetDirty (groundObjectsData);
+			}
 			GUILayout.Space (10);
 			GUILayout.Label ("Move all selected objects down to the ground");
 				GUILayout.Space (10);

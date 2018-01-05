@@ -12,12 +12,13 @@ namespace SimpleTools {
 		public static void createAsset(){
 			GameObject[] objects = new GameObject[1];
 			Object obj = AssetDatabase.LoadMainAssetAtPath ("Assets/Simple Tools/Development Tracker/DevelopmentAsset.asset");
-			Debug.Log ("Created Asset " + obj.ToString());
 			Selection.activeObject = obj;
+
 		}
 
 		int selectedHistory = -1;
 		public override void OnInspectorGUI(){
+			
 			DevelopmentTracker devTracker = (DevelopmentTracker)target;
 			EditorGUILayout.Space ();
 			EditorGUILayout.LabelField ("Development Tracker");
@@ -44,6 +45,7 @@ namespace SimpleTools {
 			GUI.color = Color.green;
 			if (GUILayout.Button ("Finalize Build")) {
 				devTracker.history.Add(System.DateTime.Now.ToString() + "\n" + devTracker.version + "\nbuild " + devTracker.build.ToString() + "\n" + devTracker.description); 
+				EditorUtility.SetDirty ((DevelopmentTracker)target);
 			}
 			GUI.color = Color.white;
 			EditorGUILayout.Space ();
